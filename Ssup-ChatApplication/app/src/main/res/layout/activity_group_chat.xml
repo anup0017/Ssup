@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GroupChatActivity">
+
+    <include
+        android:id="@+id/group_chat_bar_layout"
+        layout="@layout/app_bar_layout">
+    </include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_scroll_view"
+        android:layout_below="@+id/group_chat_bar_layout"
+        android:layout_above="@id/myLinearLayout">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/group_chat_text_display"
+                android:padding="10dp"
+                android:textAllCaps="false"
+                android:textSize="20sp"
+                android:textColor="@android:color/background_dark"
+                android:layout_marginStart="2dp"
+                android:layout_marginEnd="2dp"
+                android:layout_marginBottom="50dp"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        android:id="@+id/myLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true">
+
+        <EditText
+            android:id="@+id/input_group_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="5dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/background_edittext_userinput"
+            android:hint="Type something"
+            android:imeActionId="4"
+            android:imeOptions="actionSend"
+            android:inputType="textCapSentences|textAutoCorrect|textCapSentences|textMultiLine"
+            android:maxLength="256"
+            android:maxLines="4"
+            android:padding="12dp"
+            android:singleLine="false"
+            android:textColor="#000"
+            android:textColorHint="#fff"
+            android:textSize="20sp"
+            android:layout_toStartOf="@+id/send_button"/>
+
+        <ImageView
+            android:id="@+id/send_button"
+            android:layout_width="34dp"
+            android:layout_height="33dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="10dp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/sic"
+            />
+
+    </RelativeLayout>
+
+</RelativeLayout>
